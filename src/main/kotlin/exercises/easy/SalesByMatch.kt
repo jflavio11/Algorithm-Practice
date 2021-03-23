@@ -42,6 +42,23 @@ private fun sockMerchant(n: Int, ar: Array<Int>): Int {
     return numberOfPairs
 }
 
+/**
+ * Another solution by unknown user:
+ * ```
+ *     Set<Integer> colors = new HashSet<>();
+ *     int pairs = 0;
+ *
+ *     for (int i = 0; i < n; i++) {
+ *         if (!colors.contains(c[i])) {
+ *             colors.add(c[i]);
+ *         } else {
+ *             pairs++;
+ *             colors.remove(c[i]);
+ *         }
+ *     }
+ * ```
+ */
+
 private fun main() {
     val array = arrayOf(1, 2, 1, 2, 1, 3, 2)
     println("Number of socks ${sockMerchant(array.size, array)}")
