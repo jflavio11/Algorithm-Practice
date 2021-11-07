@@ -20,8 +20,8 @@ private fun isValidBST(node: BSTNode?, minValue: Int, maxValue: Int): Boolean {
     if (node.value > minValue &&
         node.value < maxValue &&
         isValidBST(node.left, minValue, node.value) && // check subtree to the left is valid
-        isValidBST(node.right, node.value, maxValue)
-    ) {// check subtree to the left is valid
+        isValidBST(node.right, node.value, maxValue) // check subtree to the left is valid
+    ) {
         return true
     }
 
