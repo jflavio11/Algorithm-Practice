@@ -27,9 +27,9 @@ fun main() {
 
 }
 
-data class Node(val value: Int, val left: Node? = null, val right: Node? = null)
+private data class Node(val value: Int, val left: Node? = null, val right: Node? = null)
 
-fun collect(root: Node?, map: HashMap<Int, ArrayList<Int>>, layerNumber: Int = 0): HashMap<Int, ArrayList<Int>> {
+private fun collect(root: Node?, map: HashMap<Int, ArrayList<Int>>, layerNumber: Int = 0): HashMap<Int, ArrayList<Int>> {
     if(root == null) return HashMap()
 
     if(map[layerNumber] == null){

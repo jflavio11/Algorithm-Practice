@@ -2,7 +2,7 @@ package dataStructures
 
 import java.util.*
 
-class Node(
+private class Node(
     val value: String,
     val children: Array<Node> = emptyArray()
 ) {

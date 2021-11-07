@@ -11,7 +11,7 @@ import java.util.*
  * is traversed depth-first, following the links between nodes, which represent each
  * character in the key.
  */
-class Trie(val root: Node = Node()) {
+private class Trie(val root: Node = Node()) {
 
     data class Node(
         var isWord: Boolean = false,
