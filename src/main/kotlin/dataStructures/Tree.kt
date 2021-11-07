@@ -11,7 +11,7 @@ private class Node(
      * Depth First Search - O(n) -
      * [Wikipedia](https://es.wikipedia.org/wiki/Búsqueda_en_profundidad)
      *
-     * A deep search for each node. When it does not have more children, it look
+     * A deep search for each node. When it does not have more children, it looks
      * backwards (backtracking) and repeat the process.
      *
      * Pre Order
@@ -42,6 +42,28 @@ private class Node(
      *
      * The stack is reversed in order to allow accessing
      * the first item that was added.
+     *
+     *      A
+     *    /   \
+     *   B     C
+     *  / \   / \
+     * D   E F  G
+     *
+     * Evolution of Stack per iteration (left to right):
+     * [A] -> addition of first node
+     * A
+     * [C, B] -> adds children in reversed order...
+     * A B
+     * [C, E, D] -> adds B children in reversed order
+     * A B D
+     * A B D E
+     * [C]
+     * A B D E C
+     * [G, F]
+     * A B D E C F
+     * [G]
+     * A B D E C F G
+     * []
      */
     fun dfsIterative() {
         val stack = Stack<Node>().apply { add(this@Node) }
@@ -56,8 +78,20 @@ private class Node(
 
     /**
      * Breadth First Search [Wikipedia](https://es.wikipedia.org/wiki/Búsqueda_en_anchura)
-     * It explore a Node and all its neighborhoods in the same layer/floor.
+     * It explores a Node and all its neighborhoods in the same layer/floor.
      * Then, goes to the next layer/floor.
+     *      A
+     *    /   \
+     *   B     C
+     *  / \   / \
+     * D   E F  G
+     *
+     * Evolution of Queue per iteration:
+     * [A] -> addition of first node
+     * [B, C]
+     * [C, D, E]
+     * [D, E, F, G]
+     *
      */
     fun bfsIterative() {
         val queue: Queue<Node> = LinkedList<Node>().apply { add(this@Node) }
