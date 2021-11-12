@@ -14,6 +14,7 @@ package exercises.easy
  *      with the target
  * 3. if the result is equals to the target return i and j
  * Time complexity: O(n^2)
+ * Space complexity: Zero; because we use the original list passed as parameter
  *
  * Second approach (the best solution):
  * 1. iterate each number
@@ -21,6 +22,8 @@ package exercises.easy
  * 3. we rest the target minus the current number
  * 4. if we do not find the result number, then we add the current number with the position as value
  * 5. if we found the result number, then return the value (position) of that found number the current position
+ * Time complexity: O(n)
+ * Space complexity: O(n); because we have to create a HashTable
  */
 
 fun findTwoNumbersThatSumAsTarget(list: Array<Int>, target: Int): Pair<Int, Int> {
