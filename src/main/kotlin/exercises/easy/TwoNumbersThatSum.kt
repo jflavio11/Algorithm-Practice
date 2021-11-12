@@ -30,10 +30,9 @@ fun findTwoNumbersThatSumAsTarget(list: Array<Int>, target: Int): Pair<Int, Int>
     val sortedList = list.sortedArray()
     val map = hashMapOf<Int, Int>()
     sortedList.forEachIndexed { index, value ->
-        val restResult = target - value
-        val containedResult = map[restResult]
-        if (containedResult != null) {
-            return Pair(index, containedResult)
+        val diff = target - value
+        if (map.containsKey(diff)) {
+            return Pair(index, map.getValue(diff))
         } else {
             map[value] = index
         }
